@@ -1,0 +1,113 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+
+.header-main {
+    background-image: linear-gradient(to right, #4daf54, #3d8880);
+    position: fixed;
+    height: 80px;
+}
+
+//.search {
+//    width: 450px;
+//    height: 80px;
+//    position: relative;
+//    overflow: hidden;
+//    &-input {
+//        width: 100%;
+//        height: 100%;
+//        padding: 0 65px 25px 60px;
+//        position: absolute;
+//        z-index: 1;
+//        border: none;
+//        outline: none;
+//        background-color: rgba(255,255,255,.15);
+//        color: #ddd;
+//        font-size: 28px;
+//        letter-spacing: .3px;
+//        transform-origin: 10%;
+//        transform: scaleX(0);
+//        font-family: 'PT Sans', sans-serif;
+//    }
+//    &-button {
+//        position: absolute;
+//        right: 60px;
+//        bottom: 33px;
+//        width: 30px;
+//        height: 30px;
+//        border-radius: 50%;
+//        border: 3px solid #fff;
+//        background-color: transparent;
+//        cursor: pointer;
+//        outline: none;
+//        transform: rotate(45deg);
+//        -webkit-tap-highlight-color: transparent;
+//        &::-moz-focus-inner {
+//            border: 0;
+//        }
+//    }
+//    &-label {
+//        position: absolute;
+//        top: 0;
+//        left: 60px;
+//        width: 325px;
+//        height: 77px;
+//        line-height: 95px;
+//        color: #ddd;
+//        font-size: 28px;
+//        letter-spacing: .3px;
+//        pointer-events: none;
+//        overflow: hidden;
+//        div {
+//            white-space: pre;
+//        }
+//    }
+//    &-border {
+//        width: 20px;
+//        height: 3px;
+//        position: absolute;
+//        right: 47px;
+//        bottom: 32px;
+//        transform: rotate(45deg);
+//        background-color: #fff;
+//        cursor: pointer;
+//    }
+//    &-text {
+//        opacity: 0;
+//        pointer-events: none;
+//    }
+//    &:before {
+//        content: '';
+//        position: absolute;
+//        width: 3px;
+//        height: 18px;
+//        left: 40px;
+//        top: 40px;
+//        background-color: #fff;
+//        opacity: 0;
+//        transition: opacity .3s;
+//    }
+//    &.edge:before {
+//        opacity: 1;
+//    }
+//    &-close {
+//        position: absolute;
+//        right: 15px;
+//        top: 5px;
+//        z-index: 5;
+//        color: #fff;
+//        font-size: 24px;
+//        cursor: pointer;
+//        opacity: 0;
+//        pointer-events: none;
+//        transition: opacity .4s;
+//        &.visible {
+//            opacity: 1;
+//            pointer-events: auto;
+//            transition-delay: .4s;
+//        }
+//    }
+//}
+//
+//input::-ms-clear{
+//    display: none;
+//}

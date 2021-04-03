@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     distDir: 'dist',
@@ -16,4 +17,10 @@ module.exports = {
             '@': path.resolve(__dirname, './'),
         },
     },
+    plugins: [
+        new Dotenv({
+            path: './.env', // Path to .env file (this is the default)
+            safe: false,
+        }),
+    ],
 };
