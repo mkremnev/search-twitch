@@ -4,11 +4,13 @@ export default function Footer() {
             <div className="row">
                 <a
                     href={`https://github.com/mkremnev/search-twitch`}
-                    className=""
+                    className="github-button"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    View on GitHub
+                    <span className="smal">View project on</span>
+                    <br />
+                    GitHub
                 </a>
             </div>
         </footer>
