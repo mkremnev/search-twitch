@@ -18,7 +18,7 @@ export default function Search() {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState([]);
     const [wish, setWish] = useState<TwitchType[]>([]);
-    const [flag, setFlag] = useState(false);
+    const [flag, setFlag] = useState(Math.random());
 
     const onSubmit = useCallback(
         async (event) => {
@@ -50,7 +50,7 @@ export default function Search() {
         } else {
             localStorage.setItem('list', `${id}`);
         }
-        setFlag((value) => !value);
+        setFlag(() => Math.random());
     }, []);
 
     const setWishList = useCallback((id, event) => {
@@ -65,7 +65,10 @@ export default function Search() {
 
         const filtered = lists.filter((el) => id !== el);
         localStorage.setItem('list', filtered.toString());
-        setFlag((value) => !value);
+        setWish((old: TwitchType[]) => {
+            return old.filter((el: TwitchType) => id !== el.id);
+        });
+        setFlag(() => Math.random());
     }, []);
 
     const getWishList = () => {
@@ -101,7 +104,7 @@ export default function Search() {
 
     useEffect(() => {
         getWishList();
-    }, [flag, wish, removeIdWish]);
+    }, [flag]);
 
     return (
         <>
