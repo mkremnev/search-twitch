@@ -21,6 +21,11 @@ export default function Meta() {
                 href="/favicon/favicon-16x16.png"
             />
             <link rel="shortcut icon" href="/favicon/favicon.ico" />
+            <link
+                rel="stylesheet"
+                type="text/css"
+                href="//fonts.googleapis.com/css?family=Architects+Daughter"
+            />
             <meta name="msapplication-TileColor" content="#000000" />
             <meta name="theme-color" content="#000" />
             <title>Twitch search media</title>
