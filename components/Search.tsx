@@ -1,20 +1,23 @@
 import { getUserId, getVideos } from '../lib/api';
-import React, {
-    useCallback,
-    useEffect,
-    useLayoutEffect,
-    useState,
-} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Lists from '@/components/Lists';
 import List from '@/components/List';
 import Link from 'next/link';
 
+export type TwitchType = {
+    id: string;
+    userId: string;
+    title: string;
+    thumbail: string;
+    url: string;
+};
+
 export default function Search() {
     const [value, setValue] = useState('');
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState([]);
-    const [wish, setWish] = useState([]);
+    const [wish, setWish] = useState<TwitchType[]>([]);
     const [flag, setFlag] = useState(false);
 
     const onSubmit = useCallback(
@@ -84,9 +87,9 @@ export default function Search() {
                     thumbail,
                     url,
                 };
-                const valueWish = wish.map((el) => el.id);
+                const valueWish = wish.map((el: TwitchType) => el.id);
                 if (!valueWish.includes(idElement))
-                    setWish((old) => [...old, obj]);
+                    setWish((old: TwitchType[]) => [...old, obj]);
             }
         }
     };
@@ -168,6 +171,7 @@ export default function Search() {
                                             /%{width}x%{height}/,
                                             '50x50',
                                         )}
+                                        alt={title}
                                     />
                                     <Link href={url}>
                                         <a className="list-group-item-action">
