@@ -25,9 +25,9 @@ mv env.local.example env.local
 2. добавить в файл свои идентификационные данные
 
 ```
-TWITCH_CLIENT_ID=<YOUR_CLIENT_ID>;
+NEXT_PUBLIC_TWITCH_CLIENT_ID=<YOUR_CLIENT_ID>;
 
-TWITCH_ACCESS_TOKEN=<YOUR_ACCESS_TOKEN>;
+NEXT_PUBLIC_TWITCH_ACCESS_TOKEN=<YOUR_ACCESS_TOKEN>;
 ```
 
 3. запустить проект для локальной разработки
