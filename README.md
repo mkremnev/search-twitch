@@ -8,7 +8,7 @@ Next.js, ReactHooks, LocalStorage
 ```
 
 ##### Для запуска проекта:
-**Клонировать проект**
+##### Клонировать проект
 
 ```
 git clone https://github.com/mkremnev/search-twitch.git

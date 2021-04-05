@@ -1,4 +1,3 @@
-import Container from '@/components/Container';
 import Layout from '@/components/Layout';
 import Search from '@/components/Search';
 
@@ -7,7 +6,6 @@ export default function Index() {
         <>
             <Layout>
                 <Search />
-                <Container></Container>
             </Layout>
         </>
     );
