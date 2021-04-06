@@ -25,7 +25,7 @@
 }
 
 .github-button {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: transparent url(https://pages-themes.github.io/architect/assets/images/github-button.png) 0 0 no-repeat;
@@ -86,16 +86,9 @@
 .search {
 }
 
-/**
- * Переключаемая боковая панель навигации
- * выдвигающаяся по клику слева
- */
-
 .nav {
-    /*  ширна произвольная, не стесняйтесь экспериментировать */
     width: 320px;
     min-width: 320px;
-    /* фиксируем и выставляем высоту панели на максимум */
     height: 100%;
     position: fixed;
     top: 0;
@@ -111,25 +104,12 @@
     display: block;
 }
 
-/**
- * Кнопка переключения панели
- * тег <label>
- */
-
 .nav-toggle {
-    /* абсолютно позиционируем */
     position: absolute;
-    /* относительно левого края панели */
     right: 320px;
-    /* отступ от верхнего края панели */
     top: 1em;
-    /* внутренние отступы */
     padding: 0.5em;
-    /* определяем цвет фона переключателя
-     * чаще вчего в соответствии с цветом фона панели
-    */
     background: inherit;
-    /* цвет текста */
     color: #dadada;
     /* вид курсора */
     cursor: pointer;
@@ -144,48 +124,25 @@
     transition: color .25s ease-in-out;
 }
 
-/* определяем текст кнопки
- * символ Unicode (TRIGRAM FOR HEAVEN)
-*/
-
 .nav-toggle:after {
     content: '\2630';
     text-decoration: none;
 }
 
-/* цвет текста при наведении */
-
 .nav-toggle:hover {
     color: #f4f4f4;
 }
-
-/**
- * Скрытый чекбокс (флажок)
- * невидим и недоступен :)
- * имя селектора атрибут флажка
- */
 
 [id='nav-toggle'] {
     position: absolute;
     display: none;
 }
 
-/**
- * изменение положения переключателя
- * при просмотре на мобильных устройствах
- * когда навигация раскрыта, распологаем внутри панели
-*/
-
 [id='nav-toggle']:checked ~ .nav > .nav-toggle {
     left: auto;
     right: 2px;
     top: 1em;
 }
-
-/**
- * Когда флажок установлен, открывается панель
- * используем псевдокласс:checked
- */
 
 [id='nav-toggle']:checked ~ .nav {
     right: 0;
@@ -195,12 +152,6 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
-
-/*
- * смещение контента страницы
- * на размер ширины панели,
- * фишка необязательная, на любителя
-*/
 
 [id='nav-toggle']:checked ~ main > article {
     -webkit-transform: translateX(320px);
@@ -232,10 +183,6 @@
     }
 }
 
-/**
- * Формируем стиль заголовка (логотип) панели
-*/
-
 .nav h2 {
     width: 90%;
     height: max-content;
@@ -266,9 +213,6 @@
     text-transform: uppercase;
 }
 
-
-/*плавное появление заголовка (логотипа) при раскрытии панели */
-
 [id='nav-toggle']:checked ~ .nav h2 {
     opacity: 1;
     transform: scale(1, 1);
@@ -276,12 +220,6 @@
     -moz-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
 }
-
-/**
- * формируем непосредственно само меню
- * используем неупорядоченный список для пунктов меню
- * прикрутим трансфомации и плавные переходы
- */
 
 .nav > ul {
     display: block;
@@ -309,8 +247,6 @@
     -ms-transform: translateX(0);
     transform: translateX(0);
 }
-
-/* определяем интервалы появления пунктов меню */
 
 .nav > ul > li:nth-child(2) {
     -webkit-transition: opacity .5s .2s, -webkit-transform .5s .2s;
@@ -342,11 +278,6 @@
     transition: opacity .5s .7s, transform .5s .7s;
 }
 
-
-/**
- * оформление ссылок пунктов меню
- */
-
 .nav > ul > li > a {
     display: inline-block;
     position: relative;
@@ -362,19 +293,11 @@
     transition: color .5s ease, padding .5s ease;
 }
 
-/**
- * состояние ссылок меню при наведении
- */
-
 .nav > ul > li > a:hover,
 .nav > ul > li > a:focus {
     color: white;
     padding-left: 15px;
 }
-
-/**
- * линия подчеркивания ссылок меню
- */
 
 .nav > ul > li > a:before {
     content: '';
@@ -401,11 +324,6 @@
     transition: width .5s ease;
 }
 
-/**
- * анимируем линию подчеркивания
- * ссылок при наведении
- */
-
 .nav > ul > li > a:hover:before {
     width: 0%;
     background: #3bc1a0;
@@ -420,13 +338,6 @@
     transition: width 0s ease;
 }
 
-/* фон затемнения на основной контент
- * при этом элементы блокируютя
- * спорная такая фича, если оно вам надо
- * просто раскомментируйте
-*/
-
-/*
 .mask-content {
     display: block;
     position: fixed;
@@ -446,7 +357,7 @@
     -webkit-transition: opacity .5s, visibility .5s;
     transition: opacity .5s, visibility .5s;
 }
-*/
+
 .list-group-item {
     margin-bottom: 3px;
     padding: 0;
